@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: confirm production domain, then update the sitemap URL below.
+Sitemap: https://www.ironhubgym.com.au/sitemap.xml

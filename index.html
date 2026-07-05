@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================ SEO ============================ -->
+  <title>Ironhub 24/7 Gym — Home of Strength &amp; Fitness | Clyde North &amp; Carrum Downs</title>
+  <meta name="description" content="Ironhub is a 24/7 strength-and-fitness gym with two locations in south-east Melbourne — Clyde North and Carrum Downs. Free weights, top-tier machines, personal training, and a serious community. Train any hour." />
+  <meta name="keywords" content="Ironhub, 24/7 gym, gym Clyde North, gym Carrum Downs, strength training Melbourne, bodybuilding gym, personal training, free weights" />
+  <meta name="author" content="Ironhub 24/7 Gym" />
+  <meta name="theme-color" content="#0D0D0D" />
+  <link rel="canonical" href="https://www.ironhubgym.com.au/" /> <!-- TODO: confirm real production domain -->
+
+  <!-- ===================== Open Graph / Social ===================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ironhub 24/7 Gym" />
+  <meta property="og:title" content="Ironhub 24/7 Gym — Home of Strength &amp; Fitness" />
+  <meta property="og:description" content="24/7 strength-and-fitness gym. Two locations across south-east Melbourne. The bar's always loaded." />
+  <meta property="og:url" content="https://www.ironhubgym.com.au/" /> <!-- TODO: confirm real production domain -->
+  <meta property="og:image" content="https://www.ironhubgym.com.au/images/og-image.jpg" /> <!-- TODO: add a 1200x630 B&W social share image at images/og-image.jpg -->
+  <meta property="og:locale" content="en_AU" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ironhub 24/7 Gym — Home of Strength &amp; Fitness" />
+  <meta name="twitter:description" content="24/7 strength-and-fitness gym. Two locations across south-east Melbourne." />
+  <meta name="twitter:image" content="https://www.ironhubgym.com.au/images/og-image.jpg" /> <!-- TODO: same share image -->
+
+  <!-- ========================= Favicons ========================= -->
+  <!-- TODO: drop real favicon files into /images. SVG fallback below keeps the tab branded for now. -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <!-- ========================== Fonts ==========================
+       Using Google Fonts CDN for speed of setup. To self-host later,
+       drop the .woff2 files into /fonts and swap these links for @font-face. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Type system: Anton (display), Pirata One (blackletter accent), Playfair Display italic
+       (editorial captions/quotes), Permanent Marker (annotations), Space Mono (catalog labels/index),
+       Inter (body). Grit lives in the display voices; body stays clean. -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Permanent+Marker&family=Playfair+Display:ital,wght@1,500;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- ========================= Styles ========================= -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- ================== Structured data (SEO) ================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ExerciseGym",
+    "name": "Ironhub 24/7 Gym",
+    "description": "24/7 strength-and-fitness gym with two locations in south-east Melbourne.",
+    "url": "https://www.ironhubgym.com.au/",
+    "image": "https://www.ironhubgym.com.au/images/og-image.jpg",
+    "department": [
+      {
+        "@type": "ExerciseGym",
+        "name": "Ironhub Clyde North",
+        "telephone": "+61458514335",
+        "email": "info.ironhub@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "49 Rainier Cres",
+          "addressLocality": "Clyde North",
+          "addressRegion": "VIC",
+          "postalCode": "3978",
+          "addressCountry": "AU"
+        }
+      },
+      {
+        "@type": "ExerciseGym",
+        "name": "Ironhub Carrum Downs",
+        "telephone": "+61461350777",
+        "email": "info.ironhub.cd@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "566 Frankston-Dandenong Rd",
+          "addressLocality": "Carrum Downs",
+          "addressRegion": "VIC",
+          "postalCode": "3201",
+          "addressCountry": "AU"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Grain overlay: fixed gritty film-noise across the whole page -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- SVG filter defs (defined early so headlines can reference #rough). -->
+  <svg class="svg-defs" aria-hidden="true" focusable="false" width="0" height="0">
+    <!-- Torn/irregular edges for display type. Low displacement scale keeps it legible. -->
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="3" seed="7" result="n" />
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#hero">Skip to content</a>
+
+  <!-- ============================================================= -->
+  <!-- NAV                                                            -->
+  <!-- ============================================================= -->
+  <header class="nav" id="nav" data-nav>
+    <div class="nav__inner">
+      <a href="#hero" class="wordmark" aria-label="Ironhub home">
+        <span class="wordmark__iron">IRON</span><span class="wordmark__hub">HUB</span>
+      </a>
+
+      <nav class="nav__links" id="navMenu" aria-label="Primary">
+        <a href="#programs" class="nav__link">Programs</a>
+        <a href="#trainers" class="nav__link">Trainers</a>
+        <a href="#supps" class="nav__link">Supps</a>
+        <a href="#locations" class="nav__link">Locations</a>
+        <a href="#join" class="nav__link nav__link--cta">Join</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================= -->
+  <!-- HERO                                                           -->
+  <!-- ============================================================= -->
+  <section class="hero" id="hero">
+    <!-- Hero background image (rendered B&W + grain via CSS). Sits behind the optional video,
+         which fades in over it if/when videos/hero.* are supplied. -->
+    <img class="hero__img" src="images/hero-bg.jpg" alt="Training on the gym floor at Ironhub" fetchpriority="high" />
+    <!-- TODO: I'll supply videos/hero.webm + videos/hero.mp4 (short 10–20s B&W loop, web-optimized, small)
+         and images/hero-poster.jpg. JS disables the video + shows the poster on mobile / reduced-motion / save-data. -->
+    <video class="hero__video" id="heroVideo" muted loop playsinline preload="none" poster="images/hero-poster.jpg" aria-hidden="true" tabindex="-1">
+      <source src="videos/hero.webm" type="video/webm" />
+      <source src="videos/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero__wash" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
+
+    <!-- catalog framing -->
+    <p class="index-mark index-mark--tr" aria-hidden="true">EST. 2022 · <b>NO.01</b></p>
+
+    <!-- Fight-club seal -->
+    <div class="badge pop hero__badge" style="--pop-rot:-10deg;" aria-hidden="true">
+      <span class="starburst"><svg viewBox="0 0 100 100"><polygon points="50.0,1.0 56.4,17.6 68.8,4.7 68.3,22.6 84.6,15.4 77.4,31.7 95.3,31.2 82.4,43.6 99.0,50.0 82.4,56.4 95.3,68.8 77.4,68.3 84.6,84.6 68.3,77.4 68.8,95.3 56.4,82.4 50.0,99.0 43.6,82.4 31.2,95.3 31.7,77.4 15.4,84.6 22.6,68.3 4.7,68.8 17.6,56.4 1.0,50.0 17.6,43.6 4.7,31.2 22.6,31.7 15.4,15.4 31.7,22.6 31.2,4.7 43.6,17.6"/></svg></span>
+      <span class="badge__text">24/7<br />Access</span>
+    </div>
+
+    <div class="hero__top">
+      <h1 class="hero__title distress">
+        <span class="hero__line">Home of</span>
+        <span class="hero__line"><span class="hero__accent">Strength</span> &amp;</span>
+        <span class="hero__line">Fitness.</span>
+      </h1>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__sub">
+        Come train with us across south-east Melbourne — Clyde North and Carrum Downs.
+        Open every hour you are, with a community and coaches who get the best out of you.
+      </p>
+      <div class="hero__actions">
+        <a href="#join" class="btn btn--blood">Start training</a>
+        <a href="#programs-cards" class="btn btn--ghost">See the floor</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================= -->
+  <!-- PROGRAMS / WHAT WE OFFER                                       -->
+  <!-- ============================================================= -->
+  <section class="section programs" id="programs">
+    <div class="container">
+      <header class="section__head reveal">
+        <h2 class="section__title distress">The Iron Hub</h2>
+        <span class="loaded-bar" aria-hidden="true"></span>
+      </header>
+
+      <div class="cards" id="programs-cards">
+        <!-- TODO: swap each .card__media .ph for a real B&W photo (portrait ~4:5). Repoint the href per card as needed. -->
+        <a class="card reveal" href="#join">
+          <img class="card__media" src="images/24-7.jpg" alt="Ironhub gym floor, open 24/7" loading="lazy" />
+          <span class="card__wash" aria-hidden="true"></span>
+          <span class="card__label"><h3 class="card__title">24/7 Access</h3><span class="card__more">Learn more</span></span>
+        </a>
+
+        <a class="card reveal" href="#gallery">
+          <img class="card__media" src="images/free-weights.jpg" alt="Free weights rack at Ironhub" loading="lazy" />
+          <span class="card__wash" aria-hidden="true"></span>
+          <span class="card__label"><h3 class="card__title">Strength &amp; Free Weights</h3><span class="card__more">Learn more</span></span>
+        </a>
+
+        <a class="card reveal" href="#gallery">
+          <img class="card__media" src="images/machines.jpg" alt="Cardio and machine floor at Ironhub" loading="lazy" />
+          <span class="card__wash" aria-hidden="true"></span>
+          <span class="card__label"><h3 class="card__title">Top-Tier Machines</h3><span class="card__more">Learn more</span></span>
+        </a>
+
+        <a class="card reveal" href="#trainers">
+          <img class="card__media" src="images/personal-training.jpg" alt="Personal training session at Ironhub" loading="lazy" />
+          <span class="card__wash" aria-hidden="true"></span>
+          <span class="card__label"><h3 class="card__title">Personal Training</h3><span class="card__more">Learn more</span></span>
+        </a>
+
+        <a class="card reveal" href="#trainers">
+          <img class="card__media" src="images/group-classes.jpg" alt="Group training class at Ironhub" loading="lazy" />
+          <span class="card__wash" aria-hidden="true"></span>
+          <span class="card__label"><h3 class="card__title">Group Classes</h3><span class="card__more">Learn more</span></span>
+        </a>
+
+        <a class="card reveal" href="#trainers">
+          <img class="card__media" src="images/body-building.jpg" alt="Bodybuilding and posing coaching at Ironhub" loading="lazy" />
+          <span class="card__wash" aria-hidden="true"></span>
+          <span class="card__label"><h3 class="card__title">Bodybuilding &amp; Posing</h3><span class="card__more">Learn more</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- ABOUT                                                          -->
+  <!-- ============================================================= -->
+  <section class="section about section--fade" id="about">
+    <div class="container">
+      <header class="section__head reveal">
+        <h2 class="section__title distress">The Story</h2>
+        <span class="loaded-bar" aria-hidden="true"></span>
+      </header>
+    </div>
+    <div class="container about__grid">
+      <div class="about__media reveal">
+        <!-- Multi-exposure trail: two ghost copies fan out behind the figure as the section scrolls in. -->
+        <div class="figure-trail">
+          <img class="figure-trail__ghost figure-trail__ghost--2" src="images/woman.png" alt="" aria-hidden="true" />
+          <img class="figure-trail__ghost figure-trail__ghost--1" src="images/woman.png" alt="" aria-hidden="true" />
+          <img class="figure-trail__main" src="images/woman.png" alt="Member doing squats at Ironhub" />
+        </div>
+      </div>
+
+      <div class="about__body reveal reveal--right">
+        <p class="lede">
+          Ironhub started with a simple idea: a clean, well-run room where everyone — first-timers and
+          seasoned competitors alike — can train without a queue, a sales pitch, or attitude.
+        </p>
+        <p class="about__text">
+          We invest in top-of-range equipment and we look after it. But the real difference is the people:
+          an inclusive community that shows up, spots each other, and pushes each other to get better every
+          single session.
+        </p>
+
+        <blockquote class="pullquote reveal reveal--tilt">
+          &ldquo;Everyone trains here. <span>Nobody trains alone.&rdquo;</span>
+        </blockquote>
+
+        <ul class="stats" aria-label="Ironhub at a glance">
+          <li class="stat">
+            <span class="stat__num">2</span>
+            <span class="stat__label">Locations</span>
+          </li>
+          <li class="stat stat--annot">
+            <span class="stat__num stat__num--blood">24/7</span>
+            <span class="stat__label">Member access</span>
+            <span class="annot draw stat__annot" aria-hidden="true">
+              <span class="annot__label">never closed</span>
+              <svg width="54" height="34" viewBox="0 0 54 34" fill="none"><path class="annot__line" d="M50 4 C36 6 30 20 8 28"/><circle class="annot__line-cap" cx="8" cy="28" r="3"/></svg>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- TRAINERS                                                       -->
+  <!-- ============================================================= -->
+  <section class="section trainers" id="trainers">
+    <div class="container">
+      <header class="section__head reveal">
+        <h2 class="section__title distress">Team</h2>
+        <span class="loaded-bar" aria-hidden="true"></span>
+      </header>
+
+      <!-- TODO: per coach, fill in the real data-* (name, spec, ig, bio). Photos are wired to images/coach1–4.jpg. -->
+      <div class="team-grid" id="teamGrid">
+        <button type="button" class="team-card reveal" data-name="Coach Name" data-spec="Strength &amp; Powerlifting" data-ig="#" data-img="images/coach1.jpg" data-bio="Short bio — background, what they coach, and who they love working with. (TODO: real bio.)">
+          <img class="team-card__media" src="images/coach1.jpg" alt="Coach Name — Strength &amp; Powerlifting coach at Ironhub" />
+          <span class="team-card__label"><span class="team-card__name">Coach Name</span><span class="team-card__more">Learn more</span></span>
+        </button>
+
+        <button type="button" class="team-card reveal" data-name="Coach Name" data-spec="Bodybuilding &amp; Contest Prep" data-ig="#" data-img="images/coach2.jpg" data-bio="Short bio — background, what they coach, and who they love working with. (TODO: real bio.)">
+          <img class="team-card__media" src="images/coach2.jpg" alt="Coach Name — Bodybuilding &amp; Contest Prep coach at Ironhub" />
+          <span class="team-card__label"><span class="team-card__name">Coach Name</span><span class="team-card__more">Learn more</span></span>
+        </button>
+
+        <button type="button" class="team-card reveal" data-name="Coach Name" data-spec="Personal Training" data-ig="#" data-img="images/coach3.jpg" data-bio="Short bio — background, what they coach, and who they love working with. (TODO: real bio.)">
+          <img class="team-card__media" src="images/coach3.jpg" alt="Coach Name — Personal Training coach at Ironhub" />
+          <span class="team-card__label"><span class="team-card__name">Coach Name</span><span class="team-card__more">Learn more</span></span>
+        </button>
+
+        <button type="button" class="team-card reveal" data-name="Coach Name" data-spec="Conditioning &amp; Classes" data-ig="#" data-img="images/coach4.jpg" data-bio="Short bio — background, what they coach, and who they love working with. (TODO: real bio.)">
+          <img class="team-card__media" src="images/coach4.jpg" alt="Coach Name — Conditioning &amp; Classes coach at Ironhub" />
+          <span class="team-card__label"><span class="team-card__name">Coach Name</span><span class="team-card__more">Learn more</span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coach modal — opened by a team card, navigable with prev/next (populated by JS) -->
+  <div class="coach-modal" id="coachModal" role="dialog" aria-modal="true" aria-labelledby="coachModalName" hidden>
+    <div class="coach-modal__backdrop" data-close></div>
+    <button class="coach-modal__nav coach-modal__nav--prev" id="coachPrev" aria-label="Previous coach">&#8249;</button>
+    <div class="coach-modal__panel">
+      <button class="coach-modal__close" id="coachModalClose" aria-label="Close">&times;</button>
+      <div class="coach-modal__media ph" id="coachModalMedia"><span class="ph__tag" id="coachModalTag">portrait</span></div>
+      <div class="coach-modal__body">
+        <div class="coach-modal__head">
+          <h3 class="coach-modal__name" id="coachModalName">Coach Name</h3>
+          <a class="coach-modal__ig" id="coachModalIg" href="#" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        </div>
+        <span class="coach-modal__spec" id="coachModalSpec">Speciality</span>
+        <p class="coach-modal__bio" id="coachModalBio">Bio</p>
+        <a class="coach-modal__contact" id="coachModalContact" href="#join">Contact the coach</a>
+      </div>
+    </div>
+    <button class="coach-modal__nav coach-modal__nav--next" id="coachNext" aria-label="Next coach">&#8250;</button>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- IRONHUB SUPPS                                                  -->
+  <!-- ============================================================= -->
+  <section class="section supps section--fade" id="supps">
+    <div class="container">
+      <header class="section__head reveal">
+        <h2 class="section__title distress">Ironhub Supps</h2>
+        <span class="loaded-bar" aria-hidden="true"></span>
+        <p class="section__intro">
+          Tested, no-nonsense supplements, stocked and sold in-house at both gyms.
+          <span class="hashtag">#Ironhubsupps</span>
+        </p>
+      </header>
+
+      <ul class="supps-points" aria-label="Ironhub Supps">
+        <li class="supps-point reveal">
+          <span class="supps-point__k">Free delivery</span>
+          <span class="supps-point__v">within 5 km of either gym</span>
+        </li>
+        <li class="supps-point reveal">
+          <span class="supps-point__k">20% off</span>
+          <span class="supps-point__v">for Ironhub members</span>
+        </li>
+        <li class="supps-point reveal">
+          <span class="supps-point__k">In the gym</span>
+          <span class="supps-point__v">grab yours at the front desk</span>
+        </li>
+      </ul>
+
+      <div class="supps-cta reveal">
+        <a href="#locations" class="btn btn--blood">Visit the store</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- GALLERY                                                        -->
+  <!-- ============================================================= -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <header class="section__head reveal">
+        <h2 class="section__title distress">Inside IronHub</h2>
+        <span class="loaded-bar" aria-hidden="true"></span>
+      </header>
+
+      <!-- TODO: replace each tile with a real B&W gym photo. Mixed aspect ratios make the masonry feel alive. -->
+      <div class="masonry" id="gallery-grid">
+        <button class="tile tile--tall ph reveal" data-caption="Squat racks at dawn"><span class="ph__tag">photo · tall</span></button>
+        <button class="tile ph reveal" data-caption="The dumbbell run"><span class="ph__tag">photo</span></button>
+        <button class="tile ph reveal" data-caption="Deadlift platform"><span class="ph__tag">photo</span></button>
+        <button class="tile tile--wide ph reveal" data-caption="Main floor, looking back"><span class="ph__tag">photo · wide</span></button>
+        <button class="tile ph reveal" data-caption="Cable stack"><span class="ph__tag">photo</span></button>
+        <button class="tile tile--tall ph reveal" data-caption="Chalk and calluses"><span class="ph__tag">photo · tall</span></button>
+        <button class="tile ph reveal" data-caption="Conditioning corner"><span class="ph__tag">photo</span></button>
+        <button class="tile ph reveal" data-caption="Late-night session"><span class="ph__tag">photo</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox (built by gallery, controlled by JS) -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image" hidden>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+    <figure class="lightbox__figure">
+      <div class="lightbox__media ph" id="lightboxMedia"><span class="ph__tag" id="lightboxTag">photo</span></div>
+      <figcaption class="lightbox__caption" id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- LOCATIONS                                                      -->
+  <!-- ============================================================= -->
+  <section class="section locations section--fade" id="locations">
+    <div class="container">
+      <header class="section__head reveal">
+        <h2 class="section__title distress">Locations</h2>
+        <span class="loaded-bar" aria-hidden="true"></span>
+      </header>
+
+      <div class="loc-switch reveal" role="tablist" aria-label="Choose a location">
+        <button class="loc-switch__btn is-active" role="tab" aria-selected="true" aria-controls="loc-clyde" id="tab-clyde" data-loc="clyde">Clyde North</button>
+        <button class="loc-switch__btn" role="tab" aria-selected="false" aria-controls="loc-carrum" id="tab-carrum" data-loc="carrum">Carrum Downs</button>
+      </div>
+
+      <!-- CLYDE NORTH -->
+      <div class="loc-panel is-active" id="loc-clyde" role="tabpanel" aria-labelledby="tab-clyde">
+        <div class="loc-card reveal">
+          <div class="loc-card__info">
+            <h3 class="loc-card__name">Clyde North</h3>
+            <address class="loc-card__details">
+              <p class="loc-line"><span class="loc-line__k">Address</span> 49 Rainier Cres, Clyde North VIC 3978</p>
+              <p class="loc-line"><span class="loc-line__k">Phone</span> <a href="tel:+61458514335">0458 514 335</a></p>
+              <p class="loc-line"><span class="loc-line__k">Email</span> <a href="mailto:info.ironhub@gmail.com">info.ironhub@gmail.com</a></p>
+              <p class="loc-line"><span class="loc-line__k">Instagram</span> <a href="https://instagram.com/ironhub247gym" target="_blank" rel="noopener">@ironhub247gym</a></p>
+              <!-- TODO: CONFIRM staffed/reception hours. 24/7 access is for members; listings are inconsistent (IG shows 9am–9pm). Do not treat the line below as fact. -->
+              <p class="loc-line"><span class="loc-line__k">Access</span> 24/7 for members</p>
+              <p class="loc-line"><span class="loc-line__k">Staffed</span> <span class="loc-hours-placeholder">9:00am – 9:00pm (placeholder — confirm)</span></p>
+            </address>
+            <a href="#join" class="btn btn--blood btn--sm">Enquire about Clyde North</a>
+          </div>
+          <div class="loc-card__map">
+            <!-- Google Maps embed via query string — no API key needed. -->
+            <iframe
+              title="Map to Ironhub Clyde North"
+              src="https://maps.google.com/maps?q=49%20Rainier%20Cres%2C%20Clyde%20North%20VIC%203978&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARRUM DOWNS -->
+      <div class="loc-panel" id="loc-carrum" role="tabpanel" aria-labelledby="tab-carrum" hidden>
+        <div class="loc-card reveal">
+          <div class="loc-card__info">
+            <h3 class="loc-card__name">Carrum Downs</h3>
+            <address class="loc-card__details">
+              <p class="loc-line"><span class="loc-line__k">Address</span> 566 Frankston-Dandenong Rd, Carrum Downs VIC 3201</p>
+              <p class="loc-line"><span class="loc-line__k">Phone</span> <a href="tel:+61461350777">0461 350 777</a></p>
+              <p class="loc-line"><span class="loc-line__k">Email</span> <a href="mailto:info.ironhub.cd@gmail.com">info.ironhub.cd@gmail.com</a></p>
+              <p class="loc-line"><span class="loc-line__k">Instagram</span> <a href="https://instagram.com/ironhubcarrumdowns" target="_blank" rel="noopener">@ironhubcarrumdowns</a></p>
+              <!-- TODO: CONFIRM staffed/reception hours for Carrum Downs. 24/7 access is for members. -->
+              <p class="loc-line"><span class="loc-line__k">Access</span> 24/7 for members</p>
+              <p class="loc-line"><span class="loc-line__k">Staffed</span> <span class="loc-hours-placeholder">9:00am – 9:00pm (placeholder — confirm)</span></p>
+            </address>
+            <a href="#join" class="btn btn--blood btn--sm">Enquire about Carrum Downs</a>
+          </div>
+          <div class="loc-card__map">
+            <iframe
+              title="Map to Ironhub Carrum Downs"
+              src="https://maps.google.com/maps?q=566%20Frankston-Dandenong%20Rd%2C%20Carrum%20Downs%20VIC%203201&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- JOIN / MEMBERSHIP CTA                                          -->
+  <!-- ============================================================= -->
+  <section class="section join" id="join">
+    <div class="join__wash" aria-hidden="true"></div>
+    <div class="container join__inner">
+      <div class="join__pitch reveal">
+        <h2 class="join__title">Stop thinking<br />about it. <span class="join__accent">Start lifting.</span></h2>
+        <!-- TODO: confirm membership terms (lock-in vs no lock-in, pricing tiers). Placeholder copy below. -->
+        <p class="join__copy">
+          No lock-in contracts, no pressure, no sales theatre. Pick your home gym, grab a 24/7 fob,
+          and get to work. Send us a line and we'll sort the rest.
+        </p>
+        <ul class="join__perks">
+          <li>24/7 member access at both locations</li>
+          <li>Free intro session with a coach</li> <!-- TODO: confirm this offer -->
+          <li>Ironhub Supps member pricing</li> <!-- TODO: confirm this offer -->
+        </ul>
+      </div>
+
+      <!-- Enquiry form — wired to mailto for now. TODO: connect to Formspree/Netlify Forms/backend. -->
+      <form class="enquiry reveal" id="enquiryForm" action="mailto:info.ironhub@gmail.com" method="post" enctype="text/plain" novalidate>
+        <h3 class="enquiry__title">Enquire now</h3>
+
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input type="text" id="f-name" name="name" autocomplete="name" required placeholder="Your name" />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" autocomplete="email" required placeholder="you@email.com" />
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="04xx xxx xxx" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-loc">Preferred location</label>
+          <select id="f-loc" name="location" required>
+            <option value="" disabled selected>Choose a location</option>
+            <option value="Clyde North">Clyde North</option>
+            <option value="Carrum Downs">Carrum Downs</option>
+            <option value="Either">Either / not sure yet</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-msg">Message</label>
+          <textarea id="f-msg" name="message" rows="4" placeholder="What are you training for?"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--blood btn--block">Send enquiry</button>
+        <p class="enquiry__fineprint" id="enquiryStatus" role="status">We'll get back to you within one business day.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- FOOTER                                                         -->
+  <!-- ============================================================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#hero" class="wordmark wordmark--sm" aria-label="Ironhub home">
+          <span class="wordmark__iron">IRON</span><span class="wordmark__hub">HUB</span>
+        </a>
+        <p class="footer__kicker">24/7 Gym</p>
+        <p class="footer__tag"><span class="footer__dot" aria-hidden="true"></span>Home of Strength &amp; Fitness. Open 24/7.</p>
+
+        <!-- TODO: confirm Facebook URL. Instagram handles below are from the brief. -->
+        <div class="footer__social-row">
+          <div class="footer__social-item">
+            <button type="button" class="footer__social-box" aria-haspopup="true" aria-label="Instagram — choose a location">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor"/></svg>
+            </button>
+            <div class="footer__social-popover">
+              <a href="https://instagram.com/ironhub247gym" target="_blank" rel="noopener">@ironhub247gym <span>Clyde North</span></a>
+              <a href="https://instagram.com/ironhubcarrumdowns" target="_blank" rel="noopener">@ironhubcarrumdowns <span>Carrum Downs</span></a>
+            </div>
+          </div>
+          <a class="footer__social-box" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15.5 8.5h-2c-.4 0-1 .3-1 1v2h3l-.4 3h-2.6v7h-3v-7H8v-3h2.5V9.2c0-2.4 1.5-3.9 3.8-3.9h2.2v3.2Z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer__col" aria-label="Footer">
+        <h4 class="footer__h">Quick Links</h4>
+        <a href="#programs">Programs</a>
+        <a href="#trainers">Trainers</a>
+        <a href="#supps">Supps</a>
+        <a href="#locations">Locations</a>
+        <a href="#join">Join</a>
+      </nav>
+
+      <div class="footer__col">
+        <h4 class="footer__h">Locations</h4>
+        <p>49 Rainier Cres,<br />Clyde North VIC 3978</p>
+        <p>566 Frankston-Dandenong Rd,<br />Carrum Downs VIC 3201</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__h">Contact</h4>
+        <p><a href="tel:+61458514335">0458 514 335</a> <span class="footer__contact-loc">Clyde North</span></p>
+        <p><a href="mailto:info.ironhub@gmail.com">info.ironhub@gmail.com</a></p>
+        <p><a href="tel:+61461350777">0461 350 777</a> <span class="footer__contact-loc">Carrum Downs</span></p>
+        <p><a href="mailto:info.ironhub.cd@gmail.com">info.ironhub.cd@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer__base">
+      <span class="loaded-bar loaded-bar--full" aria-hidden="true"></span>
+      <p>&copy; <span id="year"></span> Ironhub 24/7 Gym. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SVG grain filter, referenced by .grain in CSS -->
+  <svg class="svg-defs" aria-hidden="true" focusable="false">
+    <filter id="grainFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+    </filter>
+  </svg>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

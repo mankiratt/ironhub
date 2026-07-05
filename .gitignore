@@ -1,0 +1,11 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
+
+# Claude Code local tooling config/skills — not project source
+.claude/
