@@ -602,6 +602,25 @@ ul { list-style: none; padding: 0; }
 /* ---------------------------------------------------------------
    15. SUPPS / PRODUCTS
    --------------------------------------------------------------- */
+/* Full-bleed shaker photo behind the section — anchored right, extending across to the left */
+.supps { overflow: hidden; }
+.supps-bg { position: absolute; inset: 0; z-index: 0; }
+.supps-bg img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  /* contain (not cover) so the full arm/shoulder and the full shaker are always visible —
+     nothing gets cropped at the top or bottom, it just scales down to fit within the section */
+  object-fit: contain; object-position: right center;
+  filter: grayscale(1) contrast(1.15) brightness(0.55);
+}
+.supps-bg__wash {
+  position: absolute; inset: 0;
+  background:
+    /* vertical fade so the image blends into the sections above/below instead of stopping hard */
+    linear-gradient(180deg, var(--ink) 0%, rgba(13,13,13,0) 18%, rgba(13,13,13,0) 82%, var(--ink) 100%),
+    linear-gradient(90deg, var(--ink) 0%, rgba(13,13,13,0.8) 30%, rgba(13,13,13,0.45) 60%, rgba(13,13,13,0.62) 100%);
+}
+.supps > .container { position: relative; z-index: 1; }
+
 /* Centered layout: heading/intro, then the three points laid out in a horizontal line, no boxes. */
 .supps-points {
   display: flex; flex-direction: column; align-items: center;
@@ -611,7 +630,7 @@ ul { list-style: none; padding: 0; }
 .supps-point { text-align: center; }
 .supps-point__k { display: block; font-family: var(--f-display); font-size: clamp(1.5rem, 2.6vw, 2rem); text-transform: uppercase; letter-spacing: 0.01em; color: var(--blood); line-height: 1; }
 .supps-point__v { display: block; color: var(--ash); margin-top: 0.4rem; font-size: 0.98rem; }
-.supps-cta { text-align: center; margin-top: clamp(2rem, 5vw, 3rem); }
+.supps-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: clamp(2rem, 5vw, 3rem); }
 
 /* ---------------------------------------------------------------
    16. GALLERY / MASONRY + LIGHTBOX

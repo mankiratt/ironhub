@@ -61,8 +61,10 @@
     var idx = group.indexOf(el);
     if (idx > 0) { el.style.setProperty('--rd', (idx * 0.08).toFixed(2) + 's'); }
   });
-  // Decorative elements (splatter, starburst, annotation lines, the loaded-bar divider) that pop/draw in on scroll.
-  var popEls = document.querySelectorAll('.pop, .draw, .loaded-bar');
+  // Decorative elements (splatter, starburst, annotation lines) that pop/draw in on scroll.
+  // NOTE: .loaded-bar removed for now (slide-in effect parked, not deleted — see styles.css
+  // "Load-in flourish" keyframes). Add '.loaded-bar' back here to re-enable it.
+  var popEls = document.querySelectorAll('.pop, .draw');
   if (prefersReduced || !('IntersectionObserver' in window)) {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
     popEls.forEach(function (el) { el.classList.add('is-visible'); });
