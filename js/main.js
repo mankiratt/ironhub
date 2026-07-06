@@ -28,11 +28,15 @@
     nav.classList.remove('is-open');
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.setAttribute('aria-label', 'Open menu');
+    // Release the scroll lock — the page stays exactly where it was.
+    document.body.classList.remove('no-scroll');
   }
   function openMenu() {
     nav.classList.add('is-open');
     navToggle.setAttribute('aria-expanded', 'true');
     navToggle.setAttribute('aria-label', 'Close menu');
+    // Lock the page behind the full-screen overlay so it can't scroll through.
+    document.body.classList.add('no-scroll');
   }
   if (navToggle) {
     navToggle.addEventListener('click', function () {
@@ -99,25 +103,8 @@
     }
   }
 
-  if (!prefersReduced) {
-    var heroImg = document.querySelector('.hero__img');
-    var vh = window.innerHeight;
-    var parallaxTicking = false;
-    function heroParallax() {
-      var y = window.scrollY;
-      // Zoom the background image OUT as you scroll: starts zoomed in (1.2) and pulls back to 1.
-      // Never goes below 1 so it always covers the hero (no gaps). Text/buttons don't move.
-      if (y <= vh && heroImg) {
-        heroImg.style.transform = 'scale(' + (1.2 - (y / vh) * 0.2).toFixed(3) + ')';
-      }
-      parallaxTicking = false;
-    }
-    heroParallax(); // set the initial zoomed-in state
-    window.addEventListener('scroll', function () {
-      if (!parallaxTicking) { requestAnimationFrame(heroParallax); parallaxTicking = true; }
-    }, { passive: true });
-    window.addEventListener('resize', function () { vh = window.innerHeight; }, { passive: true });
-  }
+  // Hero background zoom (Ken Burns / scroll parallax) removed per request — the image sits
+  // completely static behind the content, no scale/transform tied to scroll or viewport height.
 
   /* -------------------------------------------------------------
      3. LOCATION SWITCHER (tabs)
@@ -236,7 +223,27 @@
       window.setTimeout(function () { coachModal.hidden = true; }, prefersReduced ? 0 : 320);
       if (coachLastFocus) { coachLastFocus.focus(); }
     }
-    teamCards.forEach(function (card, i) { card.addEventListener('click', function () { openCoach(i); }); });
+    // Interaction model:
+    //  - Desktop (real hover): the card reveals on hover via CSS; a click opens the modal.
+    //  - Touch (no hover): first tap acts like a hover — reveal name/spec/"Learn more" and switch
+    //    the photo to full colour, accordion-style (one active at a time). It does NOT navigate.
+    //    Only tapping "Learn more" on the already-active card opens the detail modal.
+    var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    teamCards.forEach(function (card, i) {
+      card.addEventListener('click', function (e) {
+        if (canHover) { openCoach(i); return; }
+        var moreEl = card.querySelector('.team-card__more');
+        // Learn more on an active card → open the detail modal (photo already in colour).
+        if (card.classList.contains('is-active') && moreEl && moreEl.contains(e.target)) {
+          openCoach(i);
+          return;
+        }
+        // Otherwise toggle this card active and collapse the rest (accordion).
+        var wasActive = card.classList.contains('is-active');
+        teamCards.forEach(function (c) { c.classList.remove('is-active'); });
+        if (!wasActive) { card.classList.add('is-active'); }
+      });
+    });
     cmClose.addEventListener('click', closeCoach);
     cmPrev.addEventListener('click', function () { renderCoach(coachIndex - 1); });
     cmNext.addEventListener('click', function () { renderCoach(coachIndex + 1); });
