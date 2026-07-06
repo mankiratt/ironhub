@@ -603,6 +603,23 @@ ul { list-style: none; padding: 0; }
 .coach-modal__nav--next { right: clamp(0.4rem, 4vw, 3rem); }
 @media (min-width: 720px) { .coach-modal__panel { grid-template-columns: 0.82fr 1.18fr; align-items: start; } }
 
+/* Mobile: the 4/5 portrait made the photo ~75% of the panel, pushing the name off-screen and
+   clipping the spec chip on scroll. Anchor the panel near the top and cap the photo to a fixed
+   height (cropped to the face) so name + spec + bio all read together without an awkward scroll. */
+@media (max-width: 719px) {
+  .coach-modal { align-items: start; padding-top: max(2.5vh, 1rem); }
+  .coach-modal__panel { max-height: 94vh; max-height: 94dvh; }
+  .coach-modal__media {
+    aspect-ratio: auto;
+    height: 38vh; height: 38dvh;
+    min-height: 200px;
+  }
+  /* keep the face in frame on the shorter crop (overrides .has-img's center top) */
+  .coach-modal__media.has-img { background-position: center 22%; }
+  /* float the prev/next arrows over the photo, not the bio text below it */
+  .coach-modal__nav { top: 19vh; top: 19dvh; transform: none; }
+}
+
 /* ---------------------------------------------------------------
    15. SUPPS / PRODUCTS
    --------------------------------------------------------------- */
